@@ -6,11 +6,6 @@ import {
   Mail,
   ArrowRight,
   Terminal,
-  Sparkles,
-  ChevronRight,
-  Code2,
-  Database,
-  Cpu,
 } from 'lucide-react';
 import { profileData } from '../data/profile';
 import SocialLinks from '../components/SocialLinks';
@@ -28,7 +23,7 @@ export default function Hero({ onOpenResume }) {
   return (
     <section
       id="home"
-      className="relative min-h-[92vh] pt-32 pb-20 flex items-center overflow-hidden bg-grid-pattern"
+      className="relative min-h-[90vh] pt-32 pb-20 flex items-center overflow-hidden bg-grid-pattern"
     >
       {/* Background ambient lighting orbs */}
       <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] bg-gradient-to-tr from-cyan-500/10 via-indigo-500/10 to-teal-500/5 rounded-full blur-3xl pointer-events-none -z-10" />
@@ -48,9 +43,9 @@ export default function Hero({ onOpenResume }) {
             {/* Status Pill */}
             <div className="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-slate-900/90 border border-slate-700/60 shadow-inner mb-6 text-xs font-semibold">
               <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-              <span className="text-slate-300">Available for Full Stack Opportunities</span>
+              <span className="text-slate-300">Python Full Stack Developer</span>
               <span className="text-slate-500">•</span>
-              <span className="text-cyan-400 font-mono">B.Tech 8.20 CGPA</span>
+              <span className="text-cyan-400 font-mono">3 Years Experience</span>
             </div>
 
             {/* Developer Name */}
@@ -76,9 +71,9 @@ export default function Hero({ onOpenResume }) {
               <span className="w-2 sm:w-2.5 h-6 bg-cyan-400 ml-2 animate-pulse"></span>
             </div>
 
-            {/* Concise Bio / Summary */}
-            <p className="mt-4 text-base sm:text-lg text-slate-300 max-w-2xl leading-relaxed mx-auto lg:mx-0">
-              {profileData.shortBio}
+            {/* Concise Resume Summary */}
+            <p className="mt-4 text-sm sm:text-base text-slate-300 max-w-2xl leading-relaxed mx-auto lg:mx-0">
+              {profileData.summary}
             </p>
 
             {/* Primary Action Buttons */}
@@ -97,7 +92,7 @@ export default function Hero({ onOpenResume }) {
                 className="flex items-center gap-2 px-5 py-3.5 rounded-xl text-sm font-semibold text-white bg-slate-900/90 hover:bg-slate-800 border border-slate-700/80 hover:border-cyan-500/50 transition-all shadow-sm"
               >
                 <Download size={16} className="text-cyan-400" />
-                <span>Download Resume</span>
+                <span>Download Resume PDF</span>
               </a>
 
               <button
@@ -106,7 +101,7 @@ export default function Hero({ onOpenResume }) {
                 title="Preview Resume in browser"
               >
                 <FileText size={16} />
-                <span>Preview CV</span>
+                <span>Preview Resume</span>
               </button>
 
               <a
@@ -118,10 +113,10 @@ export default function Hero({ onOpenResume }) {
               </a>
             </div>
 
-            {/* Social Links & Quick Contact */}
+            {/* Verified Profile Links */}
             <div className="mt-8 pt-6 border-t border-slate-800/80 flex flex-wrap items-center justify-center lg:justify-start gap-4">
               <span className="text-xs font-semibold uppercase tracking-wider text-slate-400">
-                Verified Profiles:
+                Contact & Profiles:
               </span>
               <SocialLinks />
             </div>
@@ -142,11 +137,11 @@ export default function Hero({ onOpenResume }) {
                   <div className="w-3 h-3 rounded-full bg-amber-500/80"></div>
                   <div className="w-3 h-3 rounded-full bg-emerald-500/80"></div>
                   <span className="ml-2 text-xs font-mono text-slate-400">
-                    kartik_portfolio/developer.py
+                    kartik_portfolio/resume.py
                   </span>
                 </div>
                 <div className="flex items-center gap-1 text-[11px] font-mono text-cyan-400 bg-cyan-500/10 px-2 py-0.5 rounded border border-cyan-500/20">
-                  <Terminal size={11} /> Python 3.12
+                  <Terminal size={11} /> Python Full Stack
                 </div>
               </div>
 
@@ -154,10 +149,10 @@ export default function Hero({ onOpenResume }) {
               <div className="p-5 font-mono text-xs sm:text-[13px] leading-relaxed text-slate-300 overflow-x-auto space-y-2">
                 <div>
                   <span className="text-violet-400">class</span>{' '}
-                  <span className="text-cyan-300 font-bold">PythonFullStackEngineer</span>:
+                  <span className="text-cyan-300 font-bold">KartikChavhan</span>:
                 </div>
                 <div className="pl-4">
-                  <span className="text-slate-500"># Production-ready software engineering</span>
+                  <span className="text-slate-500"># Resume Snapshot</span>
                 </div>
                 <div className="pl-4">
                   <span className="text-blue-400">def</span>{' '}
@@ -171,34 +166,35 @@ export default function Hero({ onOpenResume }) {
                     self.role = <span className="text-amber-300">"Python Full Stack Developer"</span>
                   </div>
                   <div>
+                    self.experience = <span className="text-amber-300">"3 years professional"</span>
+                  </div>
+                  <div>
+                    self.company = <span className="text-amber-300">"Gavkari Agro Producer Co. Ltd"</span>
+                  </div>
+                  <div>
+                    self.apis = <span className="text-amber-300">"30+ REST APIs integrated"</span>
+                  </div>
+                  <div>
                     self.education = <span className="text-amber-300">"B.Tech CSE (CGPA: 8.20)"</span>
                   </div>
                   <div>
-                    self.experience = <span className="text-amber-300">"Gavkari Agro Producer Co."</span>
+                    self.phone = <span className="text-amber-300">"9322763544"</span>
                   </div>
                   <div>
-                    self.backend = [<span className="text-amber-300">"Django"</span>, <span className="text-amber-300">"DRF"</span>, <span className="text-amber-300">"FastAPI"</span>]
-                  </div>
-                  <div>
-                    self.frontend = [<span className="text-amber-300">"React.js"</span>, <span className="text-amber-300">"Angular"</span>, <span className="text-amber-300">"Tailwind"</span>]
-                  </div>
-                  <div>
-                    self.devops = [<span className="text-amber-300">"Docker"</span>, <span className="text-amber-300">"Jenkins"</span>, <span className="text-amber-300">"CI/CD"</span>]
+                    self.email = <span className="text-amber-300">"kartikpchachan2004@gmail.com"</span>
                   </div>
                 </div>
 
                 <div className="pl-4 pt-1">
                   <span className="text-blue-400">def</span>{' '}
-                  <span className="text-emerald-400">deploy_impactful_solutions</span>(self):
+                  <span className="text-emerald-400">core_technologies</span>(self):
                 </div>
                 <div className="pl-8">
-                  <span className="text-violet-400">return</span> {'{'}
-                  <div className="pl-4 text-emerald-300">
-                    "status": "Ready to build & ship scalable software",
-                    <br />
-                    "code_quality": "Clean, testable & optimized"
-                  </div>
-                  {'}'}
+                  <span className="text-violet-400">return</span> {'['}
+                  <span className="text-emerald-300">
+                    "Python", "Django", "Flask", "React.js", "Docker", "PostgreSQL"
+                  </span>
+                  {']'}
                 </div>
               </div>
 

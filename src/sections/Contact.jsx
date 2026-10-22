@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import {
   Mail,
+  Phone,
   MapPin,
   Send,
   Check,
@@ -16,7 +17,8 @@ import SectionHeading from '../components/SectionHeading';
 import { profileData } from '../data/profile';
 
 export default function Contact({ onOpenResume }) {
-  const [copied, setCopied] = useState(false);
+  const [copiedEmail, setCopiedEmail] = useState(false);
+  const [copiedPhone, setCopiedPhone] = useState(false);
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -31,8 +33,14 @@ export default function Contact({ onOpenResume }) {
 
   const handleCopyEmail = () => {
     navigator.clipboard.writeText(profileData.email);
-    setCopied(true);
-    setTimeout(() => setCopied(false), 2500);
+    setCopiedEmail(true);
+    setTimeout(() => setCopiedEmail(false), 2500);
+  };
+
+  const handleCopyPhone = () => {
+    navigator.clipboard.writeText(profileData.phone);
+    setCopiedPhone(true);
+    setTimeout(() => setCopiedPhone(false), 2500);
   };
 
   const handleChange = (e) => {
@@ -51,7 +59,6 @@ export default function Contact({ onOpenResume }) {
       return;
     }
 
-    // Basic email format check
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(formData.email)) {
       setStatus({
@@ -64,7 +71,6 @@ export default function Contact({ onOpenResume }) {
 
     setStatus({ submitting: true, submitted: false, error: null });
 
-    // Client-side simulation of message submission with fallback mailto
     setTimeout(() => {
       setStatus({
         submitting: false,
@@ -72,16 +78,16 @@ export default function Contact({ onOpenResume }) {
         error: null,
       });
       setFormData({ name: '', email: '', subject: '', message: '' });
-    }, 1200);
+    }, 1000);
   };
 
   return (
     <section id="contact" className="py-24 bg-dark-900 relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeading
-          eyebrow="Get In Touch"
-          title="Let's Connect"
-          subtitle="Whether you have an open Full Stack role, a software engineering project, or want to discuss technical collaboration, my inbox is open."
+          eyebrow="Direct Details"
+          title="Contact"
+          subtitle="Direct contact information as verified on resume."
         />
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start max-w-6xl mx-auto">
@@ -103,10 +109,10 @@ export default function Contact({ onOpenResume }) {
                   onClick={handleCopyEmail}
                   className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold bg-slate-900 hover:bg-slate-800 text-slate-300 border border-slate-700/80 transition-colors"
                 >
-                  {copied ? (
+                  {copiedEmail ? (
                     <>
                       <Check size={14} className="text-emerald-400" />
-                      <span className="text-emerald-400 font-bold">Email Copied!</span>
+                      <span className="text-emerald-400 font-bold">Copied!</span>
                     </>
                   ) : (
                     <>
@@ -118,7 +124,7 @@ export default function Contact({ onOpenResume }) {
               </div>
 
               <span className="text-xs font-bold uppercase tracking-wider text-slate-400">
-                Direct Professional Email
+                Email Address
               </span>
               <a
                 href={`mailto:${profileData.email}`}
@@ -126,12 +132,44 @@ export default function Contact({ onOpenResume }) {
               >
                 {profileData.email}
               </a>
-              <p className="text-xs text-slate-400 mt-2">
-                Fastest response for interview invitations and technical discussions.
-              </p>
             </div>
 
-            {/* Social Channels */}
+            {/* Direct Phone Card */}
+            <div className="glass-panel rounded-2xl p-6 border border-slate-800/90 relative overflow-hidden">
+              <div className="flex items-center justify-between mb-3">
+                <div className="p-3 rounded-xl bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
+                  <Phone size={22} />
+                </div>
+                <button
+                  onClick={handleCopyPhone}
+                  className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold bg-slate-900 hover:bg-slate-800 text-slate-300 border border-slate-700/80 transition-colors"
+                >
+                  {copiedPhone ? (
+                    <>
+                      <Check size={14} className="text-emerald-400" />
+                      <span className="text-emerald-400 font-bold">Copied!</span>
+                    </>
+                  ) : (
+                    <>
+                      <Copy size={14} />
+                      <span>Copy Phone</span>
+                    </>
+                  )}
+                </button>
+              </div>
+
+              <span className="text-xs font-bold uppercase tracking-wider text-slate-400">
+                Contact Phone
+              </span>
+              <a
+                href={`tel:${profileData.phone}`}
+                className="block text-lg font-bold font-mono text-white hover:text-emerald-300 transition-colors mt-1"
+              >
+                {profileData.phone}
+              </a>
+            </div>
+
+            {/* LinkedIn & GitHub */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <a
                 href={profileData.linkedin}
@@ -141,10 +179,12 @@ export default function Contact({ onOpenResume }) {
               >
                 <div className="flex items-center justify-between mb-2">
                   <LinkedinIcon size={22} className="text-sky-400 group-hover:scale-110 transition-transform" />
-                  <span className="text-xs text-slate-500 font-mono">Profile &rarr;</span>
+                  <span className="text-xs text-slate-500 font-mono">&rarr;</span>
                 </div>
                 <h4 className="text-sm font-bold text-white">LinkedIn</h4>
-                <p className="text-xs text-slate-400 mt-1">Connect professionally</p>
+                <p className="text-xs text-slate-400 mt-1 truncate">
+                  kartik-chavhan-5428502a1
+                </p>
               </a>
 
               <a
@@ -155,33 +195,21 @@ export default function Contact({ onOpenResume }) {
               >
                 <div className="flex items-center justify-between mb-2">
                   <GithubIcon size={22} className="text-white group-hover:scale-110 transition-transform" />
-                  <span className="text-xs text-slate-500 font-mono">Repos &rarr;</span>
+                  <span className="text-xs text-slate-500 font-mono">&rarr;</span>
                 </div>
                 <h4 className="text-sm font-bold text-white">GitHub</h4>
-                <p className="text-xs text-slate-400 mt-1">Explore source code</p>
+                <p className="text-xs text-slate-400 mt-1">kartikchavhan</p>
               </a>
             </div>
 
-            {/* Location & Status Card */}
-            <div className="p-5 rounded-2xl bg-slate-950/40 border border-slate-800/80 space-y-3">
-              <div className="flex items-center gap-3 text-xs text-slate-300">
-                <MapPin size={16} className="text-cyan-400 shrink-0" />
-                <span>Maharashtra, India &bull; Open to Remote / Hybrid / On-site</span>
-              </div>
-              <div className="flex items-center gap-3 text-xs text-slate-300">
-                <Clock size={16} className="text-emerald-400 shrink-0" />
-                <span>Typically replies within 24 hours on business days</span>
-              </div>
-            </div>
-
-            {/* Download Resume banner */}
+            {/* Resume PDF Download Box */}
             <div className="p-5 rounded-2xl bg-gradient-to-br from-cyan-950/40 to-slate-900/60 border border-cyan-500/30">
               <h4 className="text-sm font-bold text-white mb-1 flex items-center gap-2">
                 <Sparkles size={16} className="text-cyan-400" />
-                Looking for Resume PDF?
+                Download Verified Resume PDF
               </h4>
               <p className="text-xs text-slate-400 mb-4">
-                Download the verified resume with complete academic and industry information.
+                Exact replica of Kartik Chavhan's official two-page resume document.
               </p>
               <div className="flex items-center gap-2">
                 <a
@@ -195,7 +223,7 @@ export default function Contact({ onOpenResume }) {
                   onClick={onOpenResume}
                   className="px-3.5 py-2 rounded-xl text-xs font-semibold text-slate-300 hover:text-white bg-slate-900 border border-slate-800"
                 >
-                  Preview Document
+                  View In-Browser
                 </button>
               </div>
             </div>
@@ -211,10 +239,10 @@ export default function Contact({ onOpenResume }) {
           >
             <div className="glass-panel rounded-2xl p-6 sm:p-8 border border-slate-800/90 shadow-xl">
               <h3 className="text-xl font-bold text-white mb-2">
-                Send a Direct Message
+                Send a Message
               </h3>
               <p className="text-xs sm:text-sm text-slate-400 mb-6">
-                Fill in the details below, and I will get back to you promptly.
+                Direct inquiry to Kartik Chavhan ({profileData.email}).
               </p>
 
               {status.submitted ? (
@@ -222,9 +250,9 @@ export default function Contact({ onOpenResume }) {
                   <div className="w-12 h-12 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center mx-auto">
                     <Check size={24} />
                   </div>
-                  <h4 className="text-lg font-bold text-white">Message Sent Successfully!</h4>
+                  <h4 className="text-lg font-bold text-white">Message Transmitted!</h4>
                   <p className="text-xs sm:text-sm text-slate-300 max-w-md mx-auto">
-                    Thank you for reaching out, Kartik Chavhan will review your inquiry and reply as soon as possible.
+                    Thank you. Kartik Chavhan will review your message and reply back shortly.
                   </p>
                   <button
                     onClick={() => setStatus({ submitting: false, submitted: false, error: null })}
@@ -254,14 +282,14 @@ export default function Contact({ onOpenResume }) {
                         value={formData.name}
                         onChange={handleChange}
                         required
-                        placeholder="e.g. John Doe"
+                        placeholder="e.g. Hiring Manager"
                         className="w-full px-4 py-2.5 rounded-xl bg-slate-950/70 border border-slate-800 text-sm text-white placeholder-slate-600 focus:border-cyan-500 focus:ring-1 focus:ring-cyan-500 transition-colors"
                       />
                     </div>
 
                     <div>
                       <label htmlFor="email" className="block text-xs font-semibold text-slate-300 mb-1.5">
-                        Email Address <span className="text-cyan-400">*</span>
+                        Your Email <span className="text-cyan-400">*</span>
                       </label>
                       <input
                         type="email"
@@ -270,7 +298,7 @@ export default function Contact({ onOpenResume }) {
                         value={formData.email}
                         onChange={handleChange}
                         required
-                        placeholder="e.g. john@company.com"
+                        placeholder="e.g. contact@company.com"
                         className="w-full px-4 py-2.5 rounded-xl bg-slate-950/70 border border-slate-800 text-sm text-white placeholder-slate-600 focus:border-cyan-500 focus:ring-1 focus:ring-cyan-500 transition-colors"
                       />
                     </div>
@@ -286,7 +314,7 @@ export default function Contact({ onOpenResume }) {
                       name="subject"
                       value={formData.subject}
                       onChange={handleChange}
-                      placeholder="e.g. Full Stack Developer Opportunity / Project Inquiry"
+                      placeholder="e.g. Python Full Stack Role / Project Discussion"
                       className="w-full px-4 py-2.5 rounded-xl bg-slate-950/70 border border-slate-800 text-sm text-white placeholder-slate-600 focus:border-cyan-500 focus:ring-1 focus:ring-cyan-500 transition-colors"
                     />
                   </div>
@@ -302,7 +330,7 @@ export default function Contact({ onOpenResume }) {
                       value={formData.message}
                       onChange={handleChange}
                       required
-                      placeholder="Share details about the role, technical scope, or any questions..."
+                      placeholder="Write your message here..."
                       className="w-full px-4 py-2.5 rounded-xl bg-slate-950/70 border border-slate-800 text-sm text-white placeholder-slate-600 focus:border-cyan-500 focus:ring-1 focus:ring-cyan-500 transition-colors resize-none"
                     ></textarea>
                   </div>
@@ -315,7 +343,7 @@ export default function Contact({ onOpenResume }) {
                     {status.submitting ? (
                       <>
                         <span className="w-4 h-4 border-2 border-slate-950 border-t-transparent rounded-full animate-spin"></span>
-                        <span>Transmitting Message...</span>
+                        <span>Sending...</span>
                       </>
                     ) : (
                       <>

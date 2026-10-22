@@ -1,5 +1,5 @@
 import React from 'react';
-import { ArrowUp, Mail } from 'lucide-react';
+import { ArrowUp, Mail, Phone } from 'lucide-react';
 import { GithubIcon, LinkedinIcon } from './Icons';
 import { profileData } from '../data/profile';
 
@@ -28,11 +28,11 @@ export default function Footer({ onOpenResume }) {
               </span>
             </div>
             <p className="text-sm text-slate-400 max-w-md leading-relaxed">
-              Python Full Stack Developer focused on building high-performance web applications, resilient backend architectures with Django & FastAPI, and modern user experiences with React.
+              Python Full Stack Developer with 3 years of professional experience in web application development, backend engineering, and REST API development.
             </p>
             <div className="flex items-center gap-2 text-xs font-mono text-emerald-400 bg-emerald-500/10 border border-emerald-500/20 px-3 py-1.5 rounded-lg w-fit">
               <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-              Open to Full-Time Engineering Roles
+              Full Stack Developer &bull; Pune, Maharashtra
             </div>
           </div>
 
@@ -44,7 +44,7 @@ export default function Footer({ onOpenResume }) {
             <ul className="space-y-2 text-sm text-slate-400">
               <li>
                 <a href="#about" className="hover:text-cyan-400 transition-colors">
-                  About Background
+                  Summary
                 </a>
               </li>
               <li>
@@ -54,17 +54,17 @@ export default function Footer({ onOpenResume }) {
               </li>
               <li>
                 <a href="#experience" className="hover:text-cyan-400 transition-colors">
-                  Work Experience
+                  Experience
                 </a>
               </li>
               <li>
                 <a href="#projects" className="hover:text-cyan-400 transition-colors">
-                  Featured Projects
+                  Projects
                 </a>
               </li>
               <li>
                 <a href="#education" className="hover:text-cyan-400 transition-colors">
-                  Education & Honors
+                  Education
                 </a>
               </li>
               <li>
@@ -72,7 +72,7 @@ export default function Footer({ onOpenResume }) {
                   onClick={onOpenResume}
                   className="hover:text-cyan-400 transition-colors text-left"
                 >
-                  Interactive Resume
+                  View Resume
                 </button>
               </li>
             </ul>
@@ -81,17 +81,23 @@ export default function Footer({ onOpenResume }) {
           {/* Col 3: Connect & Socials */}
           <div>
             <h4 className="text-xs font-bold text-slate-200 uppercase tracking-wider mb-4">
-              Connect Directly
+              Direct Contact
             </h4>
             <ul className="space-y-2.5 text-sm">
               <li>
                 <a
-                  href={profileData.github}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-2 text-slate-400 hover:text-white transition-colors"
+                  href={`mailto:${profileData.email}`}
+                  className="flex items-center gap-2 text-slate-400 hover:text-cyan-400 transition-colors break-all"
                 >
-                  <GithubIcon size={16} /> GitHub Profile
+                  <Mail size={16} className="shrink-0" /> {profileData.email}
+                </a>
+              </li>
+              <li>
+                <a
+                  href={`tel:${profileData.phone}`}
+                  className="flex items-center gap-2 text-slate-400 hover:text-emerald-400 transition-colors font-mono"
+                >
+                  <Phone size={16} className="shrink-0" /> {profileData.phone}
                 </a>
               </li>
               <li>
@@ -101,15 +107,17 @@ export default function Footer({ onOpenResume }) {
                   rel="noopener noreferrer"
                   className="flex items-center gap-2 text-slate-400 hover:text-sky-400 transition-colors"
                 >
-                  <LinkedinIcon size={16} /> LinkedIn Profile
+                  <LinkedinIcon size={16} className="shrink-0" /> LinkedIn
                 </a>
               </li>
               <li>
                 <a
-                  href={`mailto:${profileData.email}`}
-                  className="flex items-center gap-2 text-slate-400 hover:text-cyan-400 transition-colors"
+                  href={profileData.github}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2 text-slate-400 hover:text-white transition-colors"
                 >
-                  <Mail size={16} /> {profileData.email}
+                  <GithubIcon size={16} className="shrink-0" /> GitHub
                 </a>
               </li>
             </ul>
@@ -119,7 +127,7 @@ export default function Footer({ onOpenResume }) {
         {/* Bottom Bar */}
         <div className="pt-8 border-t border-slate-900 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500">
           <p>
-            &copy; {currentYear} Kartik Chavhan. Built with React, Vite & Tailwind CSS. All rights reserved.
+            &copy; {currentYear} Kartik Chavhan &bull; Resume Verified Digital Profile
           </p>
 
           <button

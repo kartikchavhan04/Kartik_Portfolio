@@ -200,7 +200,7 @@ export default function Hero({ onOpenResume }) {
 
               {/* Bottom Metrics Bar */}
               <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 p-3 bg-slate-950/90 border-t border-slate-800 text-center">
-                {profileData.stats.map((stat) => (
+                {(profileData.stats || []).map((stat) => (
                   <div key={stat.label} className="p-2 rounded-lg bg-slate-900/50">
                     <div className="text-base font-extrabold text-cyan-400 font-mono">
                       {stat.value}

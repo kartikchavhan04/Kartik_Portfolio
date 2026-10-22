@@ -40,7 +40,7 @@ export default function ProjectCard({ project, index }) {
 
           {/* Bullets directly from resume */}
           <div className="space-y-2.5 mb-5">
-            {project.bullets.slice(0, isExpanded ? project.bullets.length : 3).map((bullet, i) => (
+            {(project?.bullets || []).slice(0, isExpanded ? (project?.bullets || []).length : 3).map((bullet, i) => (
               <div key={i} className="flex items-start gap-2 text-xs text-slate-300">
                 <span className="text-cyan-400 font-bold mt-0.5 shrink-0">•</span>
                 <p className="leading-relaxed">
@@ -59,7 +59,7 @@ export default function ProjectCard({ project, index }) {
               Tech Stack
             </span>
             <div className="flex flex-wrap gap-1.5">
-              {project.techStack.map((tech) => (
+              {(project?.techStack || []).map((tech) => (
                 <span
                   key={tech}
                   className="px-2.5 py-1 rounded-lg text-xs font-mono font-medium text-slate-200 bg-slate-900 border border-slate-700/80 hover:border-cyan-500/40 hover:text-cyan-300 transition-colors"

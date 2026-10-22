@@ -100,7 +100,7 @@ export default function About({ onOpenResume }) {
               </h4>
 
               <div className="space-y-3">
-                {educationList.map((edu) => (
+                {(educationList || []).map((edu) => (
                   <div key={edu.id} className="p-3 rounded-xl bg-slate-950/60 border border-slate-800/80">
                     <div className="flex items-center justify-between text-xs font-bold text-white mb-1">
                       <span>{edu.institution}</span>

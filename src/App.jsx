@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import ErrorBoundary from './components/ErrorBoundary';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import ResumeModal from './components/ResumeModal';
@@ -22,30 +23,32 @@ function App() {
   };
 
   return (
-    <div className="min-h-screen bg-dark-950 text-slate-100 flex flex-col font-sans selection:bg-cyan-500/25 selection:text-cyan-300">
-      {/* Sticky Header Navigation */}
-      <Navbar onOpenResume={handleOpenResume} />
+    <ErrorBoundary>
+      <div className="min-h-screen bg-dark-950 text-slate-100 flex flex-col font-sans selection:bg-cyan-500/25 selection:text-cyan-300">
+        {/* Sticky Header Navigation */}
+        <Navbar onOpenResume={handleOpenResume} />
 
-      {/* Main Content Sections */}
-      <main className="flex-1">
-        <Hero onOpenResume={handleOpenResume} />
-        <About onOpenResume={handleOpenResume} />
-        <Skills />
-        <Experience onOpenResume={handleOpenResume} />
-        <Projects />
-        <Education />
-        <Contact onOpenResume={handleOpenResume} />
-      </main>
+        {/* Main Content Sections */}
+        <main className="flex-1">
+          <Hero onOpenResume={handleOpenResume} />
+          <About onOpenResume={handleOpenResume} />
+          <Skills />
+          <Experience onOpenResume={handleOpenResume} />
+          <Projects />
+          <Education />
+          <Contact onOpenResume={handleOpenResume} />
+        </main>
 
-      {/* Footer */}
-      <Footer onOpenResume={handleOpenResume} />
+        {/* Footer */}
+        <Footer onOpenResume={handleOpenResume} />
 
-      {/* Interactive Resume Modal */}
-      <ResumeModal
-        isOpen={isResumeModalOpen}
-        onClose={handleCloseResume}
-      />
-    </div>
+        {/* Interactive Resume Modal */}
+        <ResumeModal
+          isOpen={isResumeModalOpen}
+          onClose={handleCloseResume}
+        />
+      </div>
+    </ErrorBoundary>
   );
 }
 

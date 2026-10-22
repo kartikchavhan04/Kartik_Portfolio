@@ -19,7 +19,7 @@ export default function Education() {
         />
 
         <div className="max-w-4xl mx-auto space-y-5">
-          {educationList.map((edu, index) => (
+          {(educationList || []).map((edu, index) => (
             <motion.div
               key={edu.id}
               initial={{ opacity: 0, y: 20 }}

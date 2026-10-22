@@ -124,7 +124,7 @@ export default function ResumeModal({ isOpen, onClose }) {
               <h4 className="text-xs font-bold tracking-wider text-cyan-400 uppercase mb-3">
                 Experience
               </h4>
-              {experiences.map((exp) => (
+              {(experiences || []).map((exp) => (
                 <div key={exp.id} className="bg-slate-950/50 border border-slate-800/80 rounded-xl p-4 sm:p-5">
                   <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-1">
                     <h5 className="font-bold text-white text-sm sm:text-base">
@@ -137,7 +137,7 @@ export default function ResumeModal({ isOpen, onClose }) {
                     <span className="font-mono text-slate-400">{exp.period}</span>
                   </div>
                   <ul className="space-y-2 text-xs text-slate-300">
-                    {exp.bullets.map((b, i) => (
+                    {(exp?.bullets || []).map((b, i) => (
                       <li key={i} className="flex items-start gap-2">
                         <span className="text-cyan-400 shrink-0 mt-0.5">•</span>
                         <span>
@@ -156,7 +156,7 @@ export default function ResumeModal({ isOpen, onClose }) {
                 Projects
               </h4>
               <div className="space-y-4">
-                {projects.map((p) => (
+                {(projects || []).map((p) => (
                   <div key={p.id} className="bg-slate-950/50 border border-slate-800/80 rounded-xl p-4 sm:p-5">
                     <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-2">
                       <h5 className="font-bold text-white text-sm sm:text-base">
@@ -165,7 +165,7 @@ export default function ResumeModal({ isOpen, onClose }) {
                       <span className="text-xs italic font-mono text-cyan-400">{p.period}</span>
                     </div>
                     <ul className="space-y-1.5 text-xs text-slate-300">
-                      {p.bullets.map((b, i) => (
+                      {(p?.bullets || []).map((b, i) => (
                         <li key={i} className="flex items-start gap-2">
                           <span className="text-cyan-400 shrink-0 mt-0.5">•</span>
                           <span>
@@ -176,7 +176,7 @@ export default function ResumeModal({ isOpen, onClose }) {
                     </ul>
                     <div className="mt-3 pt-3 border-t border-slate-800/60 flex flex-wrap items-center gap-1.5">
                       <span className="text-[11px] font-bold text-slate-400 mr-1">Tech Stack:</span>
-                      {p.techStack.map((tech) => (
+                      {(p?.techStack || []).map((tech) => (
                         <span key={tech} className="px-2 py-0.5 rounded text-[10px] bg-slate-800 text-cyan-300 font-mono">
                           {tech}
                         </span>
@@ -193,7 +193,7 @@ export default function ResumeModal({ isOpen, onClose }) {
                 Technical Skills
               </h4>
               <div className="bg-slate-950/50 border border-slate-800/80 rounded-xl p-4 sm:p-5 space-y-2">
-                {skillCategories.map((cat) => (
+                {(skillCategories || []).map((cat) => (
                   <div key={cat.id} className="text-xs leading-relaxed flex items-start gap-2">
                     <span className="text-cyan-400 shrink-0">•</span>
                     <span>
@@ -211,7 +211,7 @@ export default function ResumeModal({ isOpen, onClose }) {
                 Education
               </h4>
               <div className="space-y-3">
-                {educationList.map((edu) => (
+                {(educationList || []).map((edu) => (
                   <div key={edu.id} className="bg-slate-950/50 border border-slate-800/80 rounded-xl p-3.5 sm:p-4">
                     <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between text-xs sm:text-sm font-bold text-white mb-0.5">
                       <span>{edu.institution}</span>

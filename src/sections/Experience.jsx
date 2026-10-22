@@ -20,7 +20,7 @@ export default function Experience({ onOpenResume }) {
         />
 
         <div className="max-w-4xl mx-auto">
-          {experiences.map((exp) => (
+          {(experiences || []).map((exp) => (
             <motion.div
               key={exp.id}
               initial={{ opacity: 0, y: 25 }}
@@ -69,7 +69,7 @@ export default function Experience({ onOpenResume }) {
 
               {/* Bullets directly from resume */}
               <div className="space-y-3.5 mb-6">
-                {exp.bullets.map((bullet, i) => (
+                {(exp?.bullets || []).map((bullet, i) => (
                   <div key={i} className="flex items-start gap-3 text-xs sm:text-sm">
                     <span className="text-cyan-400 font-bold mt-0.5 shrink-0">•</span>
                     <p className="text-slate-300 leading-relaxed">

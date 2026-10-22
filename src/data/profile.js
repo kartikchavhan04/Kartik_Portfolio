@@ -1,3 +1,6 @@
+const resumeSummary =
+  "Python Full Stack Developer with 3 years of professional experience in web application development, backend engineering, and REST API development. Developed and integrated 30+ REST APIs using Python, Django, Flask, and Django REST Framework. Skilled in frontend development with React.js, JavaScript, HTML5, CSS3, and Tailwind CSS. Experienced in SQL, PostgreSQL, MySQL, API integration, request validation, JWT authentication, and role-based access control (RBAC). Familiar with Docker, Kubernetes, Azure DevOps, Jenkins, Git, GitHub, and CI/CD workflows. Focused on maintainable backend services, reliable integrations, and responsive web applications.";
+
 export const profileData = {
   name: "Kartik Chavhan",
   title: "Python Full Stack Developer",
@@ -13,8 +16,16 @@ export const profileData = {
     "Django & Flask Developer",
     "React.js Frontend Engineer",
   ],
-  summary:
-    "Python Full Stack Developer with 3 years of professional experience in web application development, backend engineering, and REST API development. Developed and integrated 30+ REST APIs using Python, Django, Flask, and Django REST Framework. Skilled in frontend development with React.js, JavaScript, HTML5, CSS3, and Tailwind CSS. Experienced in SQL, PostgreSQL, MySQL, API integration, request validation, JWT authentication, and role-based access control (RBAC). Familiar with Docker, Kubernetes, Azure DevOps, Jenkins, Git, GitHub, and CI/CD workflows. Focused on maintainable backend services, reliable integrations, and responsive web applications.",
+  summary: resumeSummary,
+  // Backward compatibility aliases to prevent any browser cache mismatch
+  aboutParagraphs: [resumeSummary],
+  shortBio: resumeSummary,
+  quickHighlights: [
+    { title: "Backend Development", desc: "Django, Flask, FastAPI, RESTful APIs, Microservices" },
+    { title: "Frontend Development", desc: "React.js, Next.js, JavaScript, Tailwind CSS" },
+    { title: "Authentication & Security", desc: "JWT Authentication, RBAC, Request Validation" },
+    { title: "DevOps & Cloud", desc: "Docker, Kubernetes, Azure, Jenkins, CI/CD" },
+  ],
   stats: [
     { label: "Experience", value: "3 Years", detail: "Professional Web Dev" },
     { label: "REST APIs", value: "30+", detail: "Developed & Integrated" },

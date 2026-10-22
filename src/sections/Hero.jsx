@@ -40,12 +40,31 @@ export default function Hero({ onOpenResume }) {
             transition={{ duration: 0.6, ease: 'easeOut' }}
             className="lg:col-span-7 text-center lg:text-left"
           >
-            {/* Status Pill */}
-            <div className="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-slate-900/90 border border-slate-700/60 shadow-inner mb-6 text-xs font-semibold">
-              <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-              <span className="text-slate-300">Python Full Stack Developer</span>
-              <span className="text-slate-500">•</span>
-              <span className="text-cyan-400 font-mono">3 Years Experience</span>
+            {/* Profile Avatar & Status Pill */}
+            <div className="flex flex-col sm:flex-row items-center sm:items-center justify-center lg:justify-start gap-4 mb-6">
+              <div className="relative group shrink-0">
+                <div className="absolute -inset-1 rounded-full bg-gradient-to-r from-cyan-400 via-teal-400 to-emerald-400 opacity-70 blur group-hover:opacity-100 transition duration-300"></div>
+                <div className="relative w-24 h-24 sm:w-28 sm:h-28 rounded-full overflow-hidden border-2 border-slate-900 bg-slate-950 shadow-xl">
+                  <img
+                    src={profileData.avatar}
+                    alt="Kartik Chavhan - Python Full Stack Developer"
+                    className="w-full h-full object-cover object-top hover:scale-105 transition-transform duration-300"
+                  />
+                </div>
+                <div className="absolute bottom-1 right-1 w-4 h-4 rounded-full bg-emerald-400 ring-2 ring-slate-950 animate-pulse" title="Available for hire"></div>
+              </div>
+
+              <div className="flex flex-col items-center sm:items-start text-center sm:text-left">
+                <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-slate-900/90 border border-slate-700/60 shadow-inner mb-1.5 text-xs font-semibold">
+                  <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                  <span className="text-slate-300">Python Full Stack Developer</span>
+                  <span className="text-slate-500">•</span>
+                  <span className="text-cyan-400 font-mono">3 Yrs Exp</span>
+                </div>
+                <span className="text-xs text-slate-400 font-mono">
+                  Pune, Maharashtra &bull; Gavkari Agro Full Stack
+                </span>
+              </div>
             </div>
 
             {/* Developer Name */}

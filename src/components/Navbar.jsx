@@ -47,14 +47,18 @@ export default function Navbar({ onOpenResume }) {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between">
-          {/* Logo / Monogram */}
+          {/* Logo / Avatar */}
           <a
             href="#home"
             className="group flex items-center gap-3 focus:outline-none"
             aria-label="Kartik Chavhan Portfolio Home"
           >
-            <div className="relative flex items-center justify-center w-10 h-10 rounded-xl bg-gradient-to-br from-cyan-500/20 to-emerald-500/10 border border-cyan-500/30 group-hover:border-cyan-400 transition-colors shadow-sm">
-              <span className="font-extrabold text-lg text-gradient-cyan">KC</span>
+            <div className="relative w-10 h-10 rounded-full border border-cyan-500/40 group-hover:border-cyan-300 transition-all shadow-sm overflow-hidden shrink-0">
+              <img
+                src={profileData.avatar}
+                alt="Kartik Chavhan"
+                className="w-full h-full object-cover object-top"
+              />
               <div className="absolute -bottom-0.5 -right-0.5 w-2.5 h-2.5 rounded-full bg-emerald-400 ring-2 ring-slate-950 animate-pulse"></div>
             </div>
             <div className="flex flex-col">

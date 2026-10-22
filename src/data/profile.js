@@ -7,7 +7,9 @@ export const profileData = {
   email: "kartikpchachan2004@gmail.com",
   phone: "9322763544",
   linkedin: "https://www.linkedin.com/in/kartik-chavhan-5428502a1/",
-  github: "https://github.com/kartikchavhan",
+  github: "https://github.com/kartikchavhan04",
+  githubUsername: "kartikchavhan04",
+  avatar: "/images/kartik-chavhan.jpg",
   location: "Pune, Maharashtra",
   resumeUrl: "/resume.pdf",
   roles: [

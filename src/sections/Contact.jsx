@@ -198,7 +198,7 @@ export default function Contact({ onOpenResume }) {
                   <span className="text-xs text-slate-500 font-mono">&rarr;</span>
                 </div>
                 <h4 className="text-sm font-bold text-white">GitHub</h4>
-                <p className="text-xs text-slate-400 mt-1">kartikchavhan</p>
+                <p className="text-xs text-slate-400 mt-1">kartikchavhan04</p>
               </a>
             </div>
 

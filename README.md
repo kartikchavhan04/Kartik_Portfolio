@@ -87,7 +87,7 @@ This repository contains the official personal portfolio website for **Kartik Ch
 
 ### 2. Clone Repository
 ```bash
-git clone https://github.com/kartikchavhan/Kartik_Protfolio.git
+git clone https://github.com/kartikchavhan04/Kartik_Protfolio.git
 cd Kartik_Protfolio
 ```
 
@@ -133,7 +133,7 @@ The compiled, minified bundle will be in the `dist/` directory, ready for deploy
 
 ### Option 3: Deploy to GitHub Pages
 1. Install `gh-pages`: `npm install -D gh-pages`
-2. Add `"homepage": "https://kartikchavhan.github.io/Kartik_Protfolio"` in `package.json`.
+2. Add `"homepage": "https://kartikchavhan04.github.io/Kartik_Protfolio"` in `package.json`.
 3. Add `"deploy": "gh-pages -d dist"` in `package.json` scripts.
 4. Run `npm run build && npm run deploy`.
 

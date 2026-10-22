@@ -92,6 +92,36 @@ export default function About({ onOpenResume }) {
             transition={{ duration: 0.5, delay: 0.2 }}
             className="lg:col-span-5 space-y-6"
           >
+            {/* Developer Identity Card with Photo */}
+            <div className="glass-panel rounded-2xl p-5 sm:p-6 border border-slate-800/90 flex items-center gap-4 shadow-xl">
+              <div className="relative w-20 h-20 sm:w-24 sm:h-24 rounded-2xl overflow-hidden border-2 border-cyan-500/40 shrink-0 shadow-lg bg-slate-950">
+                <img
+                  src={profileData.avatar}
+                  alt="Kartik Chavhan"
+                  className="w-full h-full object-cover object-top hover:scale-105 transition-transform duration-300"
+                />
+              </div>
+              <div className="space-y-1">
+                <div className="flex items-center gap-2">
+                  <h4 className="text-base sm:text-lg font-bold text-white tracking-tight">
+                    {profileData.name}
+                  </h4>
+                  <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                </div>
+                <p className="text-xs font-semibold text-cyan-400">
+                  {profileData.title}
+                </p>
+                <p className="text-xs text-slate-400">
+                  {profileData.location} &bull; Full Stack Specialist
+                </p>
+                <div className="pt-1 flex items-center gap-2">
+                  <span className="text-[10px] font-mono font-semibold text-emerald-400 bg-emerald-500/10 border border-emerald-500/20 px-2 py-0.5 rounded-full">
+                    Verified Candidate
+                  </span>
+                </div>
+              </div>
+            </div>
+
             {/* Education Quick Breakdown */}
             <div className="glass-panel rounded-2xl p-6 sm:p-7 border border-slate-800/90 space-y-4">
               <h4 className="text-base font-bold text-white flex items-center gap-2">

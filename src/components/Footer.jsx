@@ -20,10 +20,14 @@ export default function Footer({ onOpenResume }) {
           {/* Col 1: Brand & Bio */}
           <div className="md:col-span-2 space-y-4">
             <div className="flex items-center gap-3">
-              <div className="w-9 h-9 rounded-xl bg-cyan-500/10 border border-cyan-500/30 flex items-center justify-center font-extrabold text-cyan-400">
-                KC
+              <div className="w-10 h-10 rounded-full overflow-hidden border border-cyan-500/40 shadow-sm shrink-0">
+                <img
+                  src={profileData.avatar}
+                  alt="Kartik Chavhan"
+                  className="w-full h-full object-cover object-top"
+                />
               </div>
-              <span className="text-xl font-bold text-white tracking-tight">
+              <span className="text-xl font-heading font-black text-white tracking-tight">
                 Kartik Chavhan
               </span>
             </div>

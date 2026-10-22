@@ -54,29 +54,40 @@ export default function ResumeModal({ isOpen, onClose }) {
           transition={{ duration: 0.22 }}
           className="relative w-full max-w-5xl h-[92vh] flex flex-col bg-slate-900 border border-slate-700/80 rounded-2xl shadow-2xl overflow-hidden z-10"
         >
-          {/* Header Controls */}
-          <div className="flex flex-wrap items-center justify-between gap-3 px-4 sm:px-6 py-3.5 bg-slate-950 border-b border-slate-800">
-            <div className="flex items-center gap-3">
-              <span className="w-2.5 h-2.5 rounded-full bg-cyan-400 animate-pulse"></span>
-              <div>
-                <h3 className="text-sm sm:text-base font-bold text-white tracking-tight">
-                  Kartik Chavhan — Official Resume PDF
-                </h3>
-                <p className="text-[11px] text-slate-400 hidden sm:block">
-                  Exact document provided by Kartik Chavhan
-                </p>
+          {/* Header Controls - Responsive mobile layout */}
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 px-4 sm:px-6 py-3.5 bg-slate-950 border-b border-slate-800 shrink-0">
+            <div className="flex items-center justify-between w-full sm:w-auto">
+              <div className="flex items-center gap-2.5">
+                <span className="w-2.5 h-2.5 rounded-full bg-cyan-400 animate-pulse"></span>
+                <div>
+                  <h3 className="text-sm sm:text-base font-bold text-white tracking-tight">
+                    Kartik Chavhan — Official Resume PDF
+                  </h3>
+                  <p className="text-[11px] text-slate-400 hidden sm:block">
+                    Exact document provided by Kartik Chavhan
+                  </p>
+                </div>
               </div>
+
+              {/* Close Button on mobile */}
+              <button
+                onClick={onClose}
+                aria-label="Close Resume Modal"
+                className="sm:hidden p-2 text-slate-400 hover:text-white hover:bg-slate-800 rounded-xl transition-colors"
+              >
+                <X size={20} />
+              </button>
             </div>
 
             {/* View Switcher Tabs & Actions */}
-            <div className="flex items-center gap-2">
+            <div className="flex items-center justify-between sm:justify-end gap-2 w-full sm:w-auto overflow-x-auto pb-0.5 sm:pb-0">
               {/* Tab Selector */}
-              <div className="flex items-center bg-slate-900 p-0.5 rounded-xl border border-slate-800 text-xs font-semibold">
+              <div className="flex items-center bg-slate-900 p-0.5 rounded-xl border border-slate-800 text-xs font-semibold shrink-0">
                 <button
                   onClick={() => setViewMode('pdf')}
                   className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg transition-all ${
                     viewMode === 'pdf'
-                      ? 'bg-cyan-500 text-slate-950 shadow-sm'
+                      ? 'bg-cyan-500 text-slate-950 font-bold shadow-sm'
                       : 'text-slate-400 hover:text-white'
                   }`}
                 >
@@ -87,12 +98,12 @@ export default function ResumeModal({ isOpen, onClose }) {
                   onClick={() => setViewMode('text')}
                   className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg transition-all ${
                     viewMode === 'text'
-                      ? 'bg-cyan-500 text-slate-950 shadow-sm'
+                      ? 'bg-cyan-500 text-slate-950 font-bold shadow-sm'
                       : 'text-slate-400 hover:text-white'
                   }`}
                 >
                   <FileText size={13} />
-                  <span>Interactive View</span>
+                  <span>Interactive</span>
                 </button>
               </div>
 
@@ -100,30 +111,30 @@ export default function ResumeModal({ isOpen, onClose }) {
               <a
                 href={profileData.resumeUrl}
                 download="Kartik_Chavhan_Resume.pdf"
-                className="flex items-center gap-1.5 px-3.5 py-1.5 text-xs font-bold text-slate-950 bg-gradient-to-r from-cyan-400 to-teal-400 hover:from-cyan-300 hover:to-teal-300 rounded-xl shadow-sm transition-all"
+                className="flex items-center gap-1.5 px-3.5 py-1.5 text-xs font-bold text-slate-950 bg-gradient-to-r from-cyan-400 to-teal-400 hover:from-cyan-300 hover:to-teal-300 rounded-xl shadow-sm transition-all shrink-0"
                 title="Download the exact PDF resume file"
               >
                 <Download size={14} />
-                <span>Download PDF</span>
+                <span>Download</span>
               </a>
 
-              {/* Open in new tab */}
+              {/* Open in new tab (desktop) */}
               <a
                 href={profileData.resumeUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="hidden md:flex items-center gap-1 px-2.5 py-1.5 text-xs font-medium text-slate-300 hover:text-white bg-slate-800 hover:bg-slate-700 rounded-xl transition-all"
+                className="hidden md:flex items-center gap-1 px-2.5 py-1.5 text-xs font-medium text-slate-300 hover:text-white bg-slate-800 hover:bg-slate-700 rounded-xl transition-all shrink-0"
                 title="Open PDF in new browser tab"
               >
                 <ExternalLink size={13} />
                 <span>Open Tab</span>
               </a>
 
-              {/* Close Button */}
+              {/* Close Button (desktop) */}
               <button
                 onClick={onClose}
                 aria-label="Close Resume Modal"
-                className="p-1.5 text-slate-400 hover:text-white hover:bg-slate-800 rounded-xl transition-colors ml-1"
+                className="hidden sm:block p-1.5 text-slate-400 hover:text-white hover:bg-slate-800 rounded-xl transition-colors ml-1"
               >
                 <X size={18} />
               </button>

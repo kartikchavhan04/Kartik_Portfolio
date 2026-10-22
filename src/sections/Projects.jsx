@@ -15,49 +15,53 @@ export default function Projects() {
   });
 
   return (
-    <section id="projects" className="py-24 bg-dark-900 relative">
+    <section id="projects" className="py-20 sm:py-28 bg-dark-900 relative overflow-hidden">
+      {/* Background glow orb */}
+      <div className="absolute top-1/3 right-10 w-96 h-96 bg-cyan-600/5 rounded-full blur-3xl pointer-events-none -z-10" />
+      <div className="absolute bottom-10 left-10 w-96 h-96 bg-violet-600/5 rounded-full blur-3xl pointer-events-none -z-10" />
+
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeading
           eyebrow="Architected Solutions"
-          title="Projects"
-          subtitle="Enterprise client implementations and independent personal engineering projects."
+          title="Featured Projects"
+          subtitle="Enterprise client implementations at Gavkari Agro and independent community software platforms."
         />
 
-        {/* Filter Tabs */}
-        <div className="flex flex-wrap items-center justify-center gap-2.5 mb-12">
+        {/* Filter Tabs - Mobile scrollable, desktop centered */}
+        <div className="flex items-center justify-start sm:justify-center gap-2.5 mb-12 overflow-x-auto pb-3 pt-1 px-1 no-scrollbar">
           <button
             onClick={() => setFilter('all')}
-            className={`flex items-center gap-1.5 px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all ${
+            className={`flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs sm:text-sm font-semibold shrink-0 transition-all ${
               filter === 'all'
-                ? 'bg-cyan-500 text-slate-950 shadow-md shadow-cyan-500/20 scale-[1.02]'
-                : 'bg-slate-900/80 text-slate-300 hover:text-white border border-slate-800'
+                ? 'bg-gradient-to-r from-cyan-400 to-teal-400 text-slate-950 font-bold shadow-md shadow-cyan-500/20 scale-[1.02]'
+                : 'bg-slate-900/90 text-slate-300 hover:text-white border border-slate-800'
             }`}
           >
-            <Layers size={14} />
+            <Layers size={15} />
             <span>All Projects ({(projects || []).length})</span>
           </button>
 
           <button
             onClick={() => setFilter('professional')}
-            className={`flex items-center gap-1.5 px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all ${
+            className={`flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs sm:text-sm font-semibold shrink-0 transition-all ${
               filter === 'professional'
-                ? 'bg-cyan-500 text-slate-950 shadow-md shadow-cyan-500/20 scale-[1.02]'
-                : 'bg-slate-900/80 text-slate-300 hover:text-white border border-slate-800'
+                ? 'bg-gradient-to-r from-cyan-400 to-teal-400 text-slate-950 font-bold shadow-md shadow-cyan-500/20 scale-[1.02]'
+                : 'bg-slate-900/90 text-slate-300 hover:text-white border border-slate-800'
             }`}
           >
-            <Briefcase size={14} />
+            <Briefcase size={15} />
             <span>Professional Projects ({(resumeProjects || []).length})</span>
           </button>
 
           <button
             onClick={() => setFilter('personal')}
-            className={`flex items-center gap-1.5 px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all ${
+            className={`flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs sm:text-sm font-semibold shrink-0 transition-all ${
               filter === 'personal'
-                ? 'bg-violet-500 text-white shadow-md shadow-violet-500/20 scale-[1.02]'
-                : 'bg-slate-900/80 text-slate-300 hover:text-white border border-slate-800'
+                ? 'bg-gradient-to-r from-violet-500 to-indigo-500 text-white font-bold shadow-md shadow-violet-500/25 scale-[1.02]'
+                : 'bg-slate-900/90 text-slate-300 hover:text-white border border-slate-800'
             }`}
           >
-            <UserCheck size={14} />
+            <UserCheck size={15} />
             <span>Personal Projects ({(personalProjects || []).length})</span>
           </button>
         </div>

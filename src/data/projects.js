@@ -130,33 +130,33 @@ export const personalProjects = [
     title: "Maharashtra Police Bharti Student Platform",
     projectType: "Personal Project",
     isPersonal: true,
-    period: "Educational Project",
+    period: "Exam Preparation Hub",
     accent: "from-amber-500 to-orange-600",
     overview:
-      "A test-preparation and timed exam simulation web application designed to assist rural police candidates with question banks and exam timers.",
+      "A test-preparation and timed exam simulation web application built with Flask and MySQL to assist police exam candidates with question banks and timed mock tests.",
     bullets: [
       {
         title: "Project Overview",
-        desc: "Created an educational hub offering timed practice tests, syllabus guides, and current affairs for aspiring police exam candidates.",
+        desc: "Created an educational practice platform offering timed test series, syllabus guides, and GK preparation for aspiring Maharashtra police candidates.",
       },
       {
         title: "Timed Mock Exam Simulator",
         desc: "Developed an interactive timed test engine with automatic scoring, response tracking, and performance analytics.",
       },
       {
-        title: "Backend Question Repository",
-        desc: "Structured Django backend endpoints and relational schemas to categorize questions across General Knowledge, Reasoning, and Marathi Grammar.",
+        title: "Flask & MySQL Backend",
+        desc: "Structured Flask backend REST endpoints and MySQL relational database to categorize questions across General Knowledge, Reasoning, and Marathi Grammar.",
       },
       {
         title: "Mobile Optimization",
-        desc: "Optimized component layouts and payload sizes for fast loading on 4G mobile devices in low-bandwidth rural areas.",
+        desc: "Optimized responsive UI layouts and lightweight payloads for smooth practice on 4G mobile devices in low-bandwidth rural areas.",
       },
     ],
     techStack: [
       "Python",
-      "Django",
+      "Flask",
+      "MySQL",
       "React.js",
-      "PostgreSQL",
       "Tailwind CSS",
       "REST APIs",
     ],

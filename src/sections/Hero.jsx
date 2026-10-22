@@ -13,6 +13,7 @@ import {
   Code2,
   Briefcase,
   GraduationCap,
+  Layers,
 } from 'lucide-react';
 import { profileData } from '../data/profile';
 import SocialLinks from '../components/SocialLinks';
@@ -24,8 +25,8 @@ export default function Hero({ onOpenResume }) {
   const [executionOutput, setExecutionOutput] = useState([
     '✓ Environment initialized: Python 3.12 + React 19',
     '✓ Database connected: PostgreSQL schemas loaded',
-    '✓ 30+ REST APIs registered with JWT authentication',
-    '✓ Status: Ready for Production & Full-Stack Roles',
+    '✓ 30+ REST APIs registered with JWT & RBAC',
+    '✓ Status: Ready for Full-Stack Developer Roles',
   ]);
 
   useEffect(() => {
@@ -40,17 +41,18 @@ export default function Hero({ onOpenResume }) {
     setTerminalTab('output');
     setExecutionOutput(['> Compiling kartik_profile.py...']);
     setTimeout(() => {
-      setExecutionOutput((prev) => [
-        ...prev,
-        '✓ Profile: Kartik Chavhan (Python Full Stack Developer)',
-        '✓ Work Experience: 3 Years @ Gavkari Agro Producer Co. Ltd',
-        '✓ Education: B.Tech CSE (CGPA: 8.20)',
-        '✓ Tech Stack: Python, Django, React, PostgreSQL, Docker',
-        '✓ 30+ REST APIs verified & integrated',
-        '🚀 Output: 100% Ready for Engineering Interviews!',
+      setExecutionOutput([
+        '> Compiling kartik_profile.py...',
+        '✓ Developer: Kartik Chavhan',
+        '✓ Role: Python Full Stack Developer',
+        '✓ Current: Gavkari Agro Producer Company Ltd (3 Yrs Exp)',
+        '✓ Degree: B.Tech CSE (8.20 CGPA) • GCOE Chandrapur',
+        '✓ Core Stack: Python, Django, React.js, PostgreSQL, Docker',
+        '✓ GitHub: github.com/kartikchavhan04',
+        '🚀 Output: 100% Production Ready & Available for Hire!',
       ]);
       setIsExecuting(false);
-    }, 600);
+    }, 550);
   };
 
   return (
@@ -58,13 +60,13 @@ export default function Hero({ onOpenResume }) {
       id="home"
       className="relative min-h-[92vh] pt-28 sm:pt-36 pb-16 sm:pb-24 flex items-center overflow-hidden bg-grid-pattern"
     >
-      {/* Background ambient lighting orbs with slow drift */}
-      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[550px] sm:w-[700px] h-[350px] sm:h-[450px] bg-gradient-to-tr from-cyan-500/15 via-teal-500/10 to-indigo-500/10 rounded-full blur-3xl pointer-events-none -z-10 animate-pulse-glow" />
-      <div className="absolute top-1/3 -left-24 w-80 h-80 bg-cyan-600/10 rounded-full blur-3xl pointer-events-none -z-10" />
-      <div className="absolute bottom-10 right-0 w-96 h-96 bg-indigo-600/10 rounded-full blur-3xl pointer-events-none -z-10" />
+      {/* Background ambient lighting orbs - softer and brighter for lighter theme */}
+      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] sm:w-[750px] h-[380px] sm:h-[480px] bg-gradient-to-tr from-cyan-500/20 via-teal-500/15 to-indigo-500/15 rounded-full blur-3xl pointer-events-none -z-10 animate-pulse-glow" />
+      <div className="absolute top-1/3 -left-20 w-80 h-80 bg-cyan-600/15 rounded-full blur-3xl pointer-events-none -z-10" />
+      <div className="absolute bottom-10 right-0 w-96 h-96 bg-indigo-600/15 rounded-full blur-3xl pointer-events-none -z-10" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-8 items-center">
           
           {/* Left Column: Hero Content */}
           <motion.div
@@ -73,12 +75,12 @@ export default function Hero({ onOpenResume }) {
             transition={{ duration: 0.65, ease: [0.16, 1, 0.3, 1] }}
             className="lg:col-span-7 text-center lg:text-left"
           >
-            {/* Profile Avatar & Status Pill with rotating gradient halo */}
-            <div className="flex flex-col sm:flex-row items-center sm:items-center justify-center lg:justify-start gap-4 sm:gap-5 mb-6">
+            {/* Top Greeting Badge & Status */}
+            <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 mb-6">
               <div className="relative group shrink-0">
-                {/* Rotating conic border glow */}
-                <div className="absolute -inset-1.5 rounded-full bg-gradient-to-r from-cyan-400 via-teal-400 to-indigo-500 opacity-80 blur group-hover:opacity-100 transition duration-500 animate-spin-slow"></div>
-                <div className="relative w-24 h-24 sm:w-28 sm:h-28 rounded-full overflow-hidden border-2 border-slate-900 bg-slate-950 shadow-2xl">
+                {/* Rotating gradient border halo */}
+                <div className="absolute -inset-1 rounded-full bg-gradient-to-r from-cyan-400 via-teal-400 to-indigo-500 opacity-80 blur group-hover:opacity-100 transition duration-500 animate-spin-slow"></div>
+                <div className="relative w-24 h-24 sm:w-28 sm:h-28 rounded-full overflow-hidden border-2 border-slate-700 bg-slate-900 shadow-2xl">
                   <img
                     src={profileData.avatar}
                     alt="Kartik Chavhan - Python Full Stack Developer"
@@ -86,26 +88,26 @@ export default function Hero({ onOpenResume }) {
                   />
                 </div>
                 {/* Available for hire pulse indicator */}
-                <div className="absolute bottom-1 right-1 w-5 h-5 rounded-full bg-emerald-400 ring-3 ring-slate-950 flex items-center justify-center shadow-lg shadow-emerald-500/50" title="Available for immediate hire">
-                  <span className="w-2.5 h-2.5 rounded-full bg-white animate-ping"></span>
+                <div className="absolute bottom-1 right-1 w-5 h-5 rounded-full bg-emerald-400 ring-2 ring-slate-900 flex items-center justify-center shadow-md shadow-emerald-500/50" title="Available for immediate hire">
+                  <span className="w-2 h-2 rounded-full bg-white animate-ping"></span>
                 </div>
               </div>
 
               <div className="flex flex-col items-center sm:items-start text-center sm:text-left">
-                <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-slate-900/90 border border-slate-700/80 shadow-inner mb-1.5 text-xs font-semibold backdrop-blur-md">
+                <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-slate-800/90 border border-slate-700/80 shadow-md mb-1.5 text-xs font-semibold backdrop-blur-md">
                   <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-                  <span className="text-slate-200">Open to Full-Stack Opportunities</span>
-                  <span className="text-slate-600">•</span>
+                  <span className="text-slate-200">Open to Opportunities</span>
+                  <span className="text-slate-500">•</span>
                   <span className="text-cyan-400 font-mono font-bold">3 Yrs Exp</span>
                 </div>
-                <span className="text-xs text-slate-400 font-mono">
+                <span className="text-xs text-slate-300 font-mono">
                   Pune, Maharashtra &bull; Gavkari Agro Full Stack Developer
                 </span>
               </div>
             </div>
 
-            {/* Developer Name */}
-            <h1 className="text-4xl sm:text-6xl lg:text-7xl font-heading font-black tracking-tight text-white leading-[1.08]">
+            {/* Developer Headline */}
+            <h1 className="text-4xl sm:text-6xl lg:text-7xl font-heading font-extrabold tracking-tight text-white leading-[1.1]">
               Hi, I'm <span className="text-gradient-cyan">Kartik</span>
               <br />
               <span className="text-white">Chavhan</span>
@@ -113,7 +115,7 @@ export default function Hero({ onOpenResume }) {
 
             {/* Animated Dynamic Role Badge */}
             <div className="h-10 sm:h-12 mt-4 flex items-center justify-center lg:justify-start">
-              <span className="text-cyan-500 text-lg sm:text-2xl font-mono mr-2">&lt;</span>
+              <span className="text-cyan-400 text-lg sm:text-2xl font-mono mr-2">&lt;</span>
               <AnimatePresence mode="wait">
                 <motion.span
                   key={roleIndex}
@@ -126,7 +128,7 @@ export default function Hero({ onOpenResume }) {
                   {profileData.roles[roleIndex]}
                 </motion.span>
               </AnimatePresence>
-              <span className="text-cyan-500 text-lg sm:text-2xl font-mono ml-1">/&gt;</span>
+              <span className="text-cyan-400 text-lg sm:text-2xl font-mono ml-1">/&gt;</span>
               <span className="w-2 sm:w-2.5 h-6 bg-cyan-400 ml-2 animate-pulse"></span>
             </div>
 
@@ -148,7 +150,7 @@ export default function Hero({ onOpenResume }) {
               <a
                 href={profileData.resumeUrl}
                 download="Kartik_Chavhan_Resume.pdf"
-                className="flex items-center gap-2 px-5 py-3.5 rounded-xl text-sm font-semibold text-white bg-slate-900/90 hover:bg-slate-800 border border-slate-700/80 hover:border-cyan-500/50 transition-all shadow-sm hover:scale-[1.02] active:scale-[0.98]"
+                className="flex items-center gap-2 px-5 py-3.5 rounded-xl text-sm font-semibold text-white bg-slate-800/90 hover:bg-slate-700/90 border border-slate-700 hover:border-cyan-500/50 transition-all shadow-sm hover:scale-[1.02] active:scale-[0.98]"
               >
                 <Download size={16} className="text-cyan-400" />
                 <span>Download Resume PDF</span>
@@ -156,7 +158,7 @@ export default function Hero({ onOpenResume }) {
 
               <button
                 onClick={onOpenResume}
-                className="flex items-center gap-1.5 px-4 py-3.5 rounded-xl text-sm font-medium text-slate-200 hover:text-white bg-slate-900/50 hover:bg-slate-800/90 border border-slate-800 hover:border-slate-700 transition-all"
+                className="flex items-center gap-1.5 px-4 py-3.5 rounded-xl text-sm font-medium text-slate-200 hover:text-white bg-slate-800/50 hover:bg-slate-700/80 border border-slate-700 transition-all"
                 title="Preview Resume in browser"
               >
                 <FileText size={16} className="text-cyan-400" />
@@ -165,7 +167,7 @@ export default function Hero({ onOpenResume }) {
 
               <a
                 href="#contact"
-                className="flex items-center gap-1.5 px-4 py-3.5 rounded-xl text-sm font-medium text-slate-300 hover:text-cyan-300 bg-slate-900/50 hover:bg-slate-800/90 border border-slate-800 hover:border-slate-700 transition-all"
+                className="flex items-center gap-1.5 px-4 py-3.5 rounded-xl text-sm font-medium text-slate-300 hover:text-cyan-300 bg-slate-800/50 hover:bg-slate-700/80 border border-slate-700 transition-all"
               >
                 <Mail size={16} />
                 <span>Contact Me</span>
@@ -173,7 +175,7 @@ export default function Hero({ onOpenResume }) {
             </div>
 
             {/* Verified Profile Links */}
-            <div className="mt-8 pt-6 border-t border-slate-800/80 flex flex-wrap items-center justify-center lg:justify-start gap-4">
+            <div className="mt-8 pt-6 border-t border-slate-700/80 flex flex-wrap items-center justify-center lg:justify-start gap-4">
               <span className="text-xs font-semibold uppercase tracking-wider text-slate-400 font-mono">
                 Verified Socials:
               </span>
@@ -188,9 +190,9 @@ export default function Hero({ onOpenResume }) {
             transition={{ duration: 0.65, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
             className="lg:col-span-5"
           >
-            <div className="glass-panel rounded-2xl overflow-hidden border border-slate-700/80 shadow-2xl relative group">
+            <div className="glass-panel rounded-2xl overflow-hidden border border-slate-700 shadow-2xl relative group">
               {/* Terminal Window Header */}
-              <div className="px-4 py-3 bg-slate-950/95 border-b border-slate-800 flex items-center justify-between">
+              <div className="px-4 py-3 bg-slate-900/90 border-b border-slate-700/80 flex items-center justify-between">
                 <div className="flex items-center gap-2">
                   <div className="w-3 h-3 rounded-full bg-rose-500/80"></div>
                   <div className="w-3 h-3 rounded-full bg-amber-500/80"></div>
@@ -241,7 +243,7 @@ export default function Hero({ onOpenResume }) {
               </div>
 
               {/* Terminal Code Content or Live Output */}
-              <div className="p-5 font-mono text-xs sm:text-[13px] leading-relaxed text-slate-300 overflow-x-auto min-h-[260px] bg-slate-950/40">
+              <div className="p-5 font-mono text-xs sm:text-[13px] leading-relaxed text-slate-200 overflow-x-auto min-h-[260px] bg-slate-900/60">
                 {terminalTab === 'code' ? (
                   <div className="space-y-1.5">
                     <div>
@@ -249,7 +251,7 @@ export default function Hero({ onOpenResume }) {
                       <span className="text-cyan-300 font-bold">KartikChavhan</span>:
                     </div>
                     <div className="pl-4">
-                      <span className="text-slate-500"># Verified Credentials Snapshot</span>
+                      <span className="text-slate-400"># Verified Credentials Snapshot</span>
                     </div>
                     <div className="pl-4">
                       <span className="text-blue-400">def</span>{' '}
@@ -293,13 +295,13 @@ export default function Hero({ onOpenResume }) {
                   </div>
                 ) : (
                   <div className="space-y-2 text-emerald-400 font-mono text-xs sm:text-[13px]">
-                    <div className="text-slate-400 text-[11px] pb-1 border-b border-slate-800 flex items-center justify-between">
+                    <div className="text-slate-300 text-[11px] pb-1 border-b border-slate-700 flex items-center justify-between">
                       <span>Python 3.12.0 Runtime • Status: OK</span>
-                      <span className="text-emerald-400">0.04s execution</span>
+                      <span className="text-emerald-400 font-semibold">0.04s execution</span>
                     </div>
                     {executionOutput.map((line, idx) => (
                       <div key={idx} className="flex items-start gap-2">
-                        <span className="text-slate-500 select-none">&gt;</span>
+                        <span className="text-slate-400 select-none">&gt;</span>
                         <span className={line.startsWith('🚀') ? 'text-cyan-300 font-bold' : ''}>
                           {line}
                         </span>
@@ -310,13 +312,13 @@ export default function Hero({ onOpenResume }) {
               </div>
 
               {/* Bottom Metrics Bar */}
-              <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 p-3 bg-slate-950/95 border-t border-slate-800 text-center">
+              <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 p-3 bg-slate-900/95 border-t border-slate-700/80 text-center">
                 {(profileData.stats || []).map((stat) => (
-                  <div key={stat.label} className="p-2.5 rounded-xl bg-slate-900/60 border border-slate-800/60 hover:border-cyan-500/30 transition-colors">
+                  <div key={stat.label} className="p-2.5 rounded-xl bg-slate-800/60 border border-slate-700/60 hover:border-cyan-500/40 transition-colors">
                     <div className="text-base sm:text-lg font-heading font-black text-cyan-400">
                       {stat.value}
                     </div>
-                    <div className="text-[10px] text-slate-400 uppercase tracking-wider font-semibold">
+                    <div className="text-[10px] text-slate-300 uppercase tracking-wider font-semibold">
                       {stat.label}
                     </div>
                   </div>

@@ -9,12 +9,12 @@ export default {
     extend: {
       colors: {
         dark: {
-          950: "#06090e",
-          900: "#0b0f17",
-          850: "#0f1623",
-          800: "#141d2e",
-          700: "#1d293d",
-          600: "#2d3e57",
+          950: "#0d1527", // Softer, lighter slate-navy dark
+          900: "#111c34",
+          850: "#162442",
+          800: "#1c2d52",
+          700: "#253a66",
+          600: "#344e85",
         },
         brand: {
           cyan: "#06b6d4",
@@ -26,8 +26,8 @@ export default {
         },
       },
       fontFamily: {
-        heading: ["Outfit", "sans-serif"],
-        sans: ["Plus Jakarta Sans", "Inter", "-apple-system", "BlinkMacSystemFont", "Segoe UI", "Roboto", "sans-serif"],
+        heading: ["Poppins", "sans-serif"],
+        sans: ["Inter", "-apple-system", "BlinkMacSystemFont", "Segoe UI", "Roboto", "sans-serif"],
         mono: ["JetBrains Mono", "Fira Code", "monospace"],
       },
       animation: {

@@ -11,7 +11,7 @@ export default function Footer({ onOpenResume }) {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="relative bg-slate-950 border-t border-slate-800/80 pt-16 pb-12 overflow-hidden">
+    <footer className="relative bg-dark-950 border-t border-slate-700/80 pt-16 pb-12 overflow-hidden">
       {/* Decorative gradient glow at top */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-3/4 h-[1px] bg-gradient-to-r from-transparent via-cyan-500/40 to-transparent"></div>
 

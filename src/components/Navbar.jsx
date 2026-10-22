@@ -101,7 +101,7 @@ export default function Navbar({ onOpenResume }) {
             </a>
 
             {/* Desktop Navigation Links */}
-            <nav className="hidden lg:flex items-center gap-1 bg-slate-950/70 border border-slate-800/90 px-3 py-1.5 rounded-full backdrop-blur-xl shadow-inner shadow-black/60">
+            <nav className="hidden lg:flex items-center gap-1 bg-slate-900/85 border border-slate-700/80 px-3 py-1.5 rounded-full backdrop-blur-xl shadow-lg">
               {navItems.map((item) => {
                 const isActive = activeSection === item.href.substring(1);
                 return (
@@ -182,7 +182,7 @@ export default function Navbar({ onOpenResume }) {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -20 }}
               transition={{ duration: 0.25, ease: 'easeOut' }}
-              className="fixed top-16 left-0 right-0 z-50 lg:hidden bg-slate-950/98 border-b border-slate-800/90 px-5 pt-3 pb-7 shadow-2xl max-h-[85vh] overflow-y-auto"
+              className="fixed top-16 left-0 right-0 z-50 lg:hidden bg-slate-900/98 border-b border-slate-700/80 px-5 pt-3 pb-7 shadow-2xl max-h-[85vh] overflow-y-auto"
             >
               {/* User Profile Snippet in Mobile Drawer */}
               <div className="flex items-center gap-3 p-3 rounded-2xl bg-slate-900/80 border border-slate-800 mb-4">

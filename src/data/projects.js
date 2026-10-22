@@ -1,7 +1,9 @@
-export const projects = [
+export const resumeProjects = [
   {
     id: "cab-service-provider",
     title: "Cab Service Provider",
+    projectType: "Professional Project",
+    isPersonal: false,
     period: "Aug 2023 – Nov 2024",
     accent: "from-cyan-500 to-blue-600",
     overview:
@@ -45,6 +47,8 @@ export const projects = [
   {
     id: "mahanidhi-loan-application",
     title: "Mahanidhi Loan Application",
+    projectType: "Professional Project",
+    isPersonal: false,
     period: "Nov 2024 – Present",
     accent: "from-emerald-500 to-teal-600",
     overview:
@@ -83,3 +87,117 @@ export const projects = [
     ],
   },
 ];
+
+export const personalProjects = [
+  {
+    id: "community-portal",
+    title: "Shree Vasantrao Bhumiputr Karmachari Community",
+    projectType: "Personal Project",
+    isPersonal: true,
+    period: "Independent Initiative",
+    accent: "from-violet-500 to-purple-600",
+    overview:
+      "A centralized community platform and member directory with circular broadcasts, executive profiles, and online inquiry assistance.",
+    bullets: [
+      {
+        title: "Project Overview",
+        desc: "Engineered a centralized digital network for community employees and members to streamline communications and maintain verified directory records.",
+      },
+      {
+        title: "Full Stack Architecture",
+        desc: "Developed RESTful APIs using Python and Django REST Framework, paired with responsive React.js and Tailwind CSS frontend interfaces.",
+      },
+      {
+        title: "Directory & Search",
+        desc: "Implemented dynamic search, department filtering, and pagination to quickly locate community member profiles.",
+      },
+      {
+        title: "Administrative Portal",
+        desc: "Built administrative controls for publishing official circulars, event updates, and reviewing member inquiries.",
+      },
+    ],
+    techStack: [
+      "React.js",
+      "Python",
+      "Django REST Framework",
+      "PostgreSQL",
+      "Tailwind CSS",
+      "REST APIs",
+    ],
+  },
+  {
+    id: "police-bharti-platform",
+    title: "Maharashtra Police Bharti Student Platform",
+    projectType: "Personal Project",
+    isPersonal: true,
+    period: "Educational Project",
+    accent: "from-amber-500 to-orange-600",
+    overview:
+      "A test-preparation and timed exam simulation web application designed to assist rural police candidates with question banks and exam timers.",
+    bullets: [
+      {
+        title: "Project Overview",
+        desc: "Created an educational hub offering timed practice tests, syllabus guides, and current affairs for aspiring police exam candidates.",
+      },
+      {
+        title: "Timed Mock Exam Simulator",
+        desc: "Developed an interactive timed test engine with automatic scoring, response tracking, and performance analytics.",
+      },
+      {
+        title: "Backend Question Repository",
+        desc: "Structured Django backend endpoints and relational schemas to categorize questions across General Knowledge, Reasoning, and Marathi Grammar.",
+      },
+      {
+        title: "Mobile Optimization",
+        desc: "Optimized component layouts and payload sizes for fast loading on 4G mobile devices in low-bandwidth rural areas.",
+      },
+    ],
+    techStack: [
+      "Python",
+      "Django",
+      "React.js",
+      "PostgreSQL",
+      "Tailwind CSS",
+      "REST APIs",
+    ],
+  },
+  {
+    id: "prakash-medical-store",
+    title: "Prakash Medical & General Store Management",
+    projectType: "Personal Project",
+    isPersonal: true,
+    period: "Retail Software Solution",
+    accent: "from-rose-500 to-pink-600",
+    overview:
+      "A point-of-sale billing and pharmacy inventory management system with automated batch expiry tracking and sales reporting.",
+    bullets: [
+      {
+        title: "Project Overview",
+        desc: "Built an inventory and retail billing application to eliminate manual ledger entry errors and speed up daily pharmacy counter checkouts.",
+      },
+      {
+        title: "Point-of-Sale (POS) Billing",
+        desc: "Constructed a rapid, keyboard-friendly billing interface that computes discounts, generates invoice summaries, and updates stock counts instantly.",
+      },
+      {
+        title: "Batch & Expiry Surveillance",
+        desc: "Integrated automated detection of medicine batches nearing expiration date, helping pharmacists prevent expired stock issues.",
+      },
+      {
+        title: "Database Modeling",
+        desc: "Designed MySQL relational tables for medicine inventory batches, suppliers, daily sales logs, and financial reconciliations.",
+      },
+    ],
+    techStack: [
+      "Python",
+      "Django",
+      "MySQL",
+      "JavaScript",
+      "Tailwind CSS",
+      "HTML5 / CSS3",
+    ],
+  },
+];
+
+// All projects for the portfolio Projects section
+export const projects = [...resumeProjects, ...personalProjects];

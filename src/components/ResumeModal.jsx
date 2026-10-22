@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { X, Download, Printer, Briefcase, Code, GraduationCap, Wrench } from 'lucide-react';
 import { profileData } from '../data/profile';
 import { experiences } from '../data/experience';
-import { projects } from '../data/projects';
+import { resumeProjects } from '../data/projects';
 import { skillCategories } from '../data/skills';
 import { educationList } from '../data/education';
 
@@ -156,7 +156,7 @@ export default function ResumeModal({ isOpen, onClose }) {
                 Projects
               </h4>
               <div className="space-y-4">
-                {(projects || []).map((p) => (
+                {(resumeProjects || []).map((p) => (
                   <div key={p.id} className="bg-slate-950/50 border border-slate-800/80 rounded-xl p-4 sm:p-5">
                     <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-2">
                       <h5 className="font-bold text-white text-sm sm:text-base">

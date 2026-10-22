@@ -1,0 +1,48 @@
+export const educationList = [
+  {
+    id: "btech",
+    degree: "Bachelor of Technology (B.Tech)",
+    field: "Computer Science & Engineering",
+    institution: "Government College of Engineering, Chandrapur",
+    period: "2022 – 2026",
+    gradeType: "CGPA",
+    gradeValue: "8.20 / 10.0",
+    location: "Chandrapur, Maharashtra",
+    featured: true,
+    highlights: [
+      "Core Coursework: Data Structures & Algorithms, Object-Oriented Programming, Database Management Systems, Computer Networks, Operating Systems, Software Engineering.",
+      "Consistently achieved top-tier academic performance with an 8.20 CGPA.",
+      "Practical project implementation focusing on full-stack web architectures, API design, and distributed systems.",
+    ],
+  },
+  {
+    id: "hsc",
+    degree: "Higher Secondary Certificate (HSC - 12th)",
+    field: "Science Stream (PCM)",
+    institution: "P.N. College, Pusad",
+    period: "2021 – 2022",
+    gradeType: "Percentage",
+    gradeValue: "75.50%",
+    location: "Pusad, Maharashtra",
+    featured: false,
+    highlights: [
+      "Rigorous foundation in Physics, Chemistry, and Mathematics.",
+      "Developed problem-solving and analytical reasoning aptitudes.",
+    ],
+  },
+  {
+    id: "ssc",
+    degree: "Secondary School Certificate (SSC - 10th)",
+    field: "General Secondary Education",
+    institution: "J.S.P.M. Mahavidhyalay, Pusad",
+    period: "2019 – 2020",
+    gradeType: "Percentage",
+    gradeValue: "80.00%",
+    location: "Pusad, Maharashtra",
+    featured: false,
+    highlights: [
+      "Graduated with Distinction (80.00%).",
+      "Demonstrated excellence in Mathematics, Science, and Information Technology.",
+    ],
+  },
+];

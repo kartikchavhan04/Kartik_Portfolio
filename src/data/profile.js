@@ -1,10 +1,10 @@
 const resumeSummary =
-  "Python Full Stack Developer with 3 years of professional experience in web application development, backend engineering, and REST API development. Developed and integrated 30+ REST APIs using Python, Django, Flask, and Django REST Framework. Skilled in frontend development with React.js, JavaScript, HTML5, CSS3, and Tailwind CSS. Experienced in SQL, PostgreSQL, MySQL, API integration, request validation, JWT authentication, and role-based access control (RBAC). Familiar with Docker, Kubernetes, Azure DevOps, Jenkins, Git, GitHub, and CI/CD workflows. Focused on maintainable backend services, reliable integrations, and responsive web applications.";
+  "Full Stack Developer with 3+ years of hands-on experience building production-grade web applications using React.js, Next.js, Django , Django , REST Freamwork, FastAPI ,and Python Flask. Specializes in microservices architecture, RESTful API design, and crafting responsive, user-centric interfaces. Skilled in building AI-driven applications using Large Language Models, LangChain, and LangGraph, including RAG pipelines and conversational agents for real-world use cases like voice bots and recommendation systems. Brings a strong grasp of Data Structures, Algorithms, and OOP principles, complemented by practical experience in system design, database tuning, and performance optimization. Comfortable across the DevOps stack — from writing Dockerfiles and Kubernetes manifests to configuring Jenkins CI/CD pipelines and deploying on Azure. Thrives in Agile teams where code quality, collaboration, and continuous delivery are prioritized.";
 
 export const profileData = {
   name: "Kartik Chavhan",
-  title: "Python Full Stack Developer",
-  email: "kartikpchachan2004@gmail.com",
+  title: "Full Stack Developer",
+  email: "kartikpchavhan2004@gmail.com",
   phone: "9322763544",
   linkedin: "https://www.linkedin.com/in/kartik-chavhan-5428502a1/",
   github: "https://github.com/kartikchavhan04",
@@ -13,25 +13,25 @@ export const profileData = {
   location: "Pune, Maharashtra",
   resumeUrl: "/resume.pdf",
   roles: [
-    "Python Full Stack Developer",
-    "Backend & REST API Engineer",
-    "Django & Flask Developer",
-    "React.js Frontend Engineer",
+    "Full Stack Developer",
+    "Python & Django Developer",
+    "AI & LLM Application Engineer",
+    "React.js & Next.js Engineer",
   ],
   summary: resumeSummary,
   // Backward compatibility aliases to prevent any browser cache mismatch
   aboutParagraphs: [resumeSummary],
   shortBio: resumeSummary,
   quickHighlights: [
-    { title: "Backend Development", desc: "Django, Flask, FastAPI, RESTful APIs, Microservices" },
-    { title: "Frontend Development", desc: "React.js, Next.js, JavaScript, Tailwind CSS" },
-    { title: "Authentication & Security", desc: "JWT Authentication, RBAC, Request Validation" },
-    { title: "DevOps & Cloud", desc: "Docker, Kubernetes, Azure, Jenkins, CI/CD" },
+    { title: "Full Stack Engineering", desc: "React.js, Next.js, Django, FastAPI, Python Flask" },
+    { title: "AI & LLM Engineering", desc: "LangChain, LangGraph, RAG, Conversational Agents" },
+    { title: "APIs & Security", desc: "RESTful APIs, Microservices, JWT, RBAC" },
+    { title: "DevOps & Cloud", desc: "Docker, Kubernetes, Azure, Jenkins CI/CD" },
   ],
   stats: [
-    { label: "Experience", value: "3 Years", detail: "Professional Web Dev" },
-    { label: "REST APIs", value: "30+", detail: "Developed & Integrated" },
+    { label: "Experience", value: "3+ Years", detail: "Full Stack & Web Dev" },
+    { label: "AI & RAG", value: "LLM / LangGraph", detail: "Conversational Agents" },
     { label: "B.Tech CGPA", value: "8.20", detail: "GCOE Chandrapur" },
-    { label: "Core Stacks", value: "Python / React", detail: "Full Stack Ecosystem" },
+    { label: "Core Stack", value: "Python / React", detail: "Full Stack & Cloud" },
   ],
 };

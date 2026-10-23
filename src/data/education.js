@@ -9,15 +9,15 @@ export const educationList = [
   },
   {
     id: "pn-college",
-    institution: "P.N. College, Pusad",
+    institution: "P.N College, Pusad",
     degree: "HSC (75.50%)",
     period: "2021 – 2022",
     location: "Pusad, Maharashtra",
     grade: "75.50%",
   },
   {
-    id: "jspm-mahavidhyalay",
-    institution: "J.S.P.M. Mahavidhyalay, Pusad",
+    id: "jspm-pusad",
+    institution: "J.S.P.M , Pusad",
     degree: "SSC (80.00%)",
     period: "2019 – 2020",
     location: "Pusad, Maharashtra",

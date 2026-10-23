@@ -246,10 +246,10 @@ export default function ResumeModal({ isOpen, onClose }) {
                   ))}
                 </section>
 
-                {/* Projects (Only the 2 resume projects) */}
+                {/* Projects */}
                 <section>
                   <h4 className="text-xs font-bold tracking-wider text-cyan-400 uppercase mb-3">
-                    Projects (Verified in Resume)
+                    Projects
                   </h4>
                   <div className="space-y-4">
                     {(resumeProjects || []).map((p) => (
@@ -283,10 +283,10 @@ export default function ResumeModal({ isOpen, onClose }) {
                   </div>
                 </section>
 
-                {/* Technical Skills */}
+                {/* Skills */}
                 <section>
                   <h4 className="text-xs font-bold tracking-wider text-cyan-400 uppercase mb-3">
-                    Technical Skills
+                    Skills
                   </h4>
                   <div className="bg-slate-950/50 border border-slate-800/80 rounded-xl p-4 sm:p-5 space-y-2">
                     {(skillCategories || []).map((cat) => (

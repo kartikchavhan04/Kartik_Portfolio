@@ -1,89 +1,102 @@
 export const resumeProjects = [
   {
-    id: "cab-service-provider",
-    title: "Cab Service Provider",
-    projectType: "Professional Project",
-    isPersonal: false,
-    period: "Aug 2023 – Nov 2024",
-    accent: "from-cyan-500 to-blue-600",
-    overview:
-      "Developed a cab service backend integrating payment workflows with Mahindra Finance’s loan collection process",
-    bullets: [
-      {
-        title: "Project Overview",
-        desc: "Developed a cab service backend integrating payment workflows with Mahindra Finance’s loan collection process",
-      },
-      {
-        title: "Full Stack Development",
-        desc: "Developed full-stack features using Angular for the frontend and Python Django for the backend, integrating REST APIs to support cab payment and loan collection workflows",
-      },
-      {
-        title: "Backend Development",
-        desc: "Developed and maintained RESTful APIs using Python and Django to handle cab payments, loan collection, business logic, and request validation",
-      },
-      {
-        title: "Database & Frontend Integration",
-        desc: "Worked with PostgreSQL database schemas and queries, integrating Django backend services with Angular frontend workflows",
-      },
-      {
-        title: "CI/CD & Third-Party Integration",
-        desc: "Used Jenkins and Docker to support automated build and deployment workflows and integrated external financial services for reliable data exchange",
-      },
-      {
-        title: "Performance Optimization",
-        desc: "Improved API response time by 30% through database query optimization and caching strategies, if verified by actual measurements",
-      },
-    ],
-    techStack: [
-      "Python",
-      "Django",
-      "Angular",
-      "PostgreSQL",
-      "Jenkins",
-      "Docker",
-      "REST APIs",
-    ],
-  },
-  {
-    id: "mahanidhi-loan-application",
-    title: "Mahanidhi Loan Application",
+    id: "ai-career-counselling-platform",
+    title: "AI Career Counselling Platform",
     projectType: "Professional Project",
     isPersonal: false,
     period: "Nov 2024 – Present",
-    accent: "from-emerald-500 to-teal-600",
+    accent: "from-cyan-500 to-blue-600",
     overview:
-      "Worked on a microservices-based lending application supporting customer onboarding and loan processing across web and mobile platforms",
+      "Built an AI-driven career counselling platform that recommends suitable colleges and courses to students by analyzing their exam marks, category, and preferences against historical cutoff data.",
     bullets: [
       {
-        title: "Project Overview",
-        desc: "Worked on a microservices-based lending application supporting customer onboarding and loan processing across web and mobile platforms",
+        title: "Overview",
+        desc: "Built an AI-driven career counselling platform that recommends suitable colleges and courses to students by analyzing their exam marks, category, and preferences against historical cutoff data",
       },
       {
-        title: "Backend Development",
-        desc: "Developed RESTful APIs using Python, Django, and Flask to implement business logic, request validation, and loan processing workflows",
+        title: "Recommendation Engine",
+        desc: "Implemented a rule-based filtering layer over previous years’ cutoff datasets to shortlist eligible colleges by percentile, category, branch, and location, then ranked results by admission probability",
       },
       {
-        title: "Microservices Architecture",
-        desc: "Worked with independently deployable services to support modular application development, service integration, and scalability",
+        title: "RAG Pipeline",
+        desc: "Designed a retrieval-augmented generation pipeline using LangChain that embeds college prospectuses, cutoff sheets, and admission policies into a vector store, enabling grounded and accurate answers to student queries",
       },
       {
-        title: "Integration & Deployment",
-        desc: "Integrated third-party services and supported CI/CD workflows for building and deploying application services",
+        title: "LLM Integration",
+        desc: "Integrated Large Language Models with structured prompts and tool calling to convert raw eligibility results into personalized, human-readable counselling guidance and comparison summaries",
       },
       {
-        title: "Monitoring & Reliability",
-        desc: "Contributed to application logging, troubleshooting, and service reliability improvements to support production operations",
+        title: "Conversational Flow",
+        desc: "Orchestrated multi-turn counselling conversations with LangGraph, maintaining student context across turns and routing queries between eligibility lookup, document retrieval, and advisory responses",
+      },
+      {
+        title: "Backend",
+        desc: "Developed REST APIs with Python Flask to handle student profiles, cutoff queries, and LLM inference requests, with input validation and structured JSON responses for reliable frontend consumption",
+      },
+      {
+        title: "UI",
+        desc: "Built a responsive React.js interface with guided input forms, filterable college result tables, and an interactive chat panel for real-time career counselling",
       },
     ],
     techStack: [
       "Python",
-      "Django",
       "Flask",
+      "LangChain",
+      "LangGraph",
+      "Large Language Models",
+      "RAG",
+      "Vector Database",
+      "React.js",
+      "JavaScript",
       "PostgreSQL",
-      "Docker",
-      "Microservices",
-      "CI/CD",
       "REST APIs",
+      "Git",
+    ],
+  },
+  {
+    id: "cab-service-provider-system",
+    title: "Cab Service Provider System",
+    projectType: "Professional Project",
+    isPersonal: false,
+    period: "Aug 2023 – Nov 2024",
+    accent: "from-emerald-500 to-teal-600",
+    overview:
+      "Developed a cab booking platform from scratch, handling everything from ride requests and fare computation to real-time tracking and driver-rider coordination.",
+    bullets: [
+      {
+        title: "Overview",
+        desc: "Developed a cab booking platform from scratch, handling everything from ride requests and fare computation to real-time tracking and driver-rider coordination",
+      },
+      {
+        title: "Frontend",
+        desc: "Assembled a responsive React UI with dynamic booking forms, live ride tracking views, and driver/admin dashboards — all optimized for usability across screen sizes",
+      },
+      {
+        title: "Backend",
+        desc: "Designed REST APIs covering ride lifecycle management, dynamic fare calculation, and real-time event handling, with clear separation of concerns across service layers",
+      },
+      {
+        title: "Security",
+        desc: "Implemented authentication and authorization flows to control access by role (rider, driver, admin), along with booking state machine logic to prevent invalid transitions",
+      },
+      {
+        title: "Integration",
+        desc: "Connected React frontend to Django Backend service with consistent request/response contracts, client-side validation, and error handling to ensure smooth end-to-end data flow",
+      },
+      {
+        title: "Database",
+        desc: "Tuned MySQL queries and refined schema design to handle concurrent bookings efficiently and keep read/write operations fast under load",
+      },
+    ],
+    techStack: [
+      "React",
+      "JavaScript",
+      "Python",
+      "Django",
+      "MySQL",
+      "REST APIs",
+      "Docker",
+      "Git",
     ],
   },
 ];
